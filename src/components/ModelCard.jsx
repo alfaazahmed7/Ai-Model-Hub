@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const ModelCard = ({ model, carts, setCarts }) => {
     const [isSubscribed, setIsSubscribed] = useState(false);
@@ -6,6 +7,7 @@ const ModelCard = ({ model, carts, setCarts }) => {
     const handleSubscription = () => {
         setIsSubscribed(true);
         setCarts([...carts, model]);
+        toast("Item added to cart!");
     }
 
     return (
@@ -24,7 +26,7 @@ const ModelCard = ({ model, carts, setCarts }) => {
                     <button
                         onClick={handleSubscription}
                         className='bg-[#ef233c] w-full py-3 rounded-xl text-white font-semibold cursor-pointer'>
-                        {isSubscribed ? "Subscribed" : "Subscribe Now"}
+                        {isSubscribed ? "Subscribed" : "Subscribe Now"}  
                     </button>
                 </div>
             </div>

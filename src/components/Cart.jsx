@@ -1,12 +1,19 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const Cart = ({ carts, setCarts }) => {
     const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
 
+    const handleCheckout = () => {
+        setCarts([]);
+        toast("Payment successful");
+    }
+
     const handleDelete = (item) => {
         const filterArray = carts.filter(c => c.id !== item.id);
         setCarts(filterArray);
+        toast("Item remove from the cart");
     }
 
     return (
@@ -32,24 +39,24 @@ const Cart = ({ carts, setCarts }) => {
                                 <div>
                                     <button
                                         onClick={() => handleDelete(item)}
-                                    className='text-2xl opacity-70 hover:text-red-400 cursor-pointer'><MdOutlineCancel /></button>
+                                        className='text-2xl opacity-70 hover:text-red-400 cursor-pointer'><MdOutlineCancel /></button>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     )}
 
-            <div className='max-w-[800px] mx-auto border py-5 px-6 rounded-2xl bg-black mb-5'>
-                <div className='flex justify-between text-white'>
-                    <h2 className='text-3xl font-bold'>Total</h2>
-                    <p className='text-3xl font-bold'>${totalPrice}</p>
-                </div>
-            </div>
-            <div className='bg-red-500 rounded-2xl max-w-[800px] mx-auto'>
-                <button
-                    onClick={() => setCarts([])}
-                    className='w-full text-white font-semibold text-3xl py-5 cursor-pointer'>Proceed to Checkout</button>
-            </div>
-        </>
+                    <div className='max-w-[800px] mx-auto border py-5 px-6 rounded-2xl bg-black mb-5'>
+                        <div className='flex justify-between text-white'>
+                            <h2 className='text-3xl font-bold'>Total</h2>
+                            <p className='text-3xl font-bold'>${totalPrice}</p>
+                        </div>
+                    </div>
+                    <div className='bg-red-500 rounded-2xl max-w-[800px] mx-auto'>
+                        <button
+                            onClick={handleCheckout}
+                            className='w-full text-white font-semibold text-3xl py-5 cursor-pointer'>Proceed to Checkout</button>
+                    </div>
+                </>
             }
         </div >
     );
