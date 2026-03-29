@@ -86,5 +86,13 @@
     "price": 20,
     "image": "https://learningtech.uncg.edu/wp-content/uploads/2025/10/app-page-logo_copilot.png",
     "status": "popular"
+  },
+  {
+    "id": 12,
+    "title": "Character.AI",
+    "description": "Interactive AI platform focused on conversations and roleplay.\nCreate and chat with custom AI personalities for fun and storytelling.",
+    "price": 0,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ZNsIEvcse6SzAFKwbRK8p5L6oLFkM7HQ9P5ZYEdgtN3BnJxbHXWbYlQ&s=10",
+    "status": "favourite"
   }
 ]
