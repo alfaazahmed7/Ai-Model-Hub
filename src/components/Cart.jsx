@@ -1,7 +1,9 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
-const Cart = ({ carts }) => {
+const Cart = ({ carts, setCarts }) => {
+    const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+
     return (
         <div className='w-10/12 mx-auto my-5'>
             <h2 className='max-w-[800px] mx-auto text-4xl font-bold mb-5'>Your Cart</h2>
@@ -25,6 +27,18 @@ const Cart = ({ carts }) => {
                     </div>
                 </div>
             )}
+
+            <div className='max-w-[800px] mx-auto border py-5 px-6 rounded-2xl bg-black mb-5'>
+                <div className='flex justify-between text-white'>
+                    <h2 className='text-3xl font-bold'>Total</h2>
+                    <p className='text-3xl font-bold'>${totalPrice}</p>
+                </div>
+            </div>
+            <div className='bg-red-500 rounded-2xl'>
+                <button
+                    onClick={() => setCarts([])}
+                    className='w-full text-white font-semibold text-3xl py-5 cursor-pointer'>Proceed to Checkout</button>
+            </div>
         </div>
     );
 };

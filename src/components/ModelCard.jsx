@@ -23,7 +23,7 @@ const ModelCard = ({ model, carts, setCarts }) => {
                 <div>
                     <button
                         onClick={handleSubscription}
-                        className='bg-[#ef233c] w-full py-3 rounded-xl text-white font-semibold'>
+                        className='bg-[#ef233c] w-full py-3 rounded-xl text-white font-semibold cursor-pointer'>
                         {isSubscribed ? "Subscribed" : "Subscribe Now"}
                     </button>
                 </div>
