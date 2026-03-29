@@ -1,10 +1,15 @@
 import './App.css'
+import Banner from './components/Banner'
+import Footer from './components/Footer'
+import NavBar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-5xl'>Hello World!</h1>
+      <NavBar />
+      <Banner />
+      <Footer />
     </>
   )
 }
