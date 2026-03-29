@@ -15,6 +15,7 @@ const modelPromises = getModels();
 
 function App() {
   const [activeTab, setActiveTab] = useState("model");
+  const [carts, setCarts] = useState([]);
 
   return (
     <>
@@ -35,8 +36,12 @@ function App() {
         />
       </div>
 
-      {activeTab === "model" && <Models modelPromises={modelPromises} />}
-      {activeTab === "cart" && <Cart />}
+      {activeTab === "model"
+        && <Models modelPromises={modelPromises}
+          carts={carts}
+          setCarts={setCarts}
+        />}
+      {activeTab === "cart" && <Cart carts={carts} />}
       <Footer />
     </>
   )
