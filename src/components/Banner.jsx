@@ -41,7 +41,7 @@ const Banner = () => {
                 <div className="relative flex justify-center lg:justify-end">
                     <div className="relative">
                         <img
-                            className="relative h-130 w-auto object-contain drop-shadow-2xl rounded-3xl animate-pulse"
+                            className="relative h-130 w-auto object-contain drop-shadow-2xl rounded-3xl"//animate-pulse
                             src={BannerImage}
                             alt="AI Models Banner"
                         />
