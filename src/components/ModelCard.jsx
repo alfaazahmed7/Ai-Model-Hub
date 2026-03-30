@@ -6,6 +6,13 @@ const ModelCard = ({ model, carts, setCarts }) => {
 
     const handleSubscription = () => {
         setIsSubscribed(true);
+
+        const isFound = carts.find((item) => item.id === model.id);
+        if (isFound) {
+            toast.error("Item already in the cart!");
+            return;
+        }
+
         setCarts([...carts, model]);
         toast("Item added to cart!");
     }
@@ -26,7 +33,7 @@ const ModelCard = ({ model, carts, setCarts }) => {
                     <button
                         onClick={handleSubscription}
                         className='bg-[#ef233c] w-full py-3 rounded-xl text-white font-semibold cursor-pointer'>
-                        {isSubscribed ? "Subscribed" : "Subscribe Now"}  
+                        {isSubscribed ? "Subscribed" : "Subscribe Now"}
                     </button>
                 </div>
             </div>
